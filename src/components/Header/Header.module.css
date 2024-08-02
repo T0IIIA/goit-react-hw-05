@@ -1,0 +1,19 @@
+.header {
+  background-color: #FF8945;
+  border-radius: 10px;
+}
+
+.nav {
+  display: flex;
+}
+
+.link {
+  padding: 10px 15px;
+  color: #000000;
+  overflow: hidden;
+}
+
+.active {
+  background-color: #fff;
+  border-radius: 10px;
+}

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+}
+
+
+.link {
+  background-color: #0d8587;
+  border-radius: 10px;
+  padding: 8px 25px;
+  margin: 0 auto;
+
+  &:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    background-color: #00666a;
+    color: #e4e4e4;
+  }
+}
