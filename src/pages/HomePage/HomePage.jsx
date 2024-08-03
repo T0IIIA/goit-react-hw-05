@@ -11,8 +11,7 @@ const HomePage = () => {
       const getData = async () => {
         const data = await fetchTrendingMovies()
         setMovies(data.results)
-        console.log(data);
-        
+        console.log(data)
       }
       getData()
     } catch (err) {
