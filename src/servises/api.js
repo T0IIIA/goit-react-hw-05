@@ -5,7 +5,7 @@ const ApiToken =
 
 // --------------------------
 
-export const fetchMovies = async () => {
+export const fetchTrendingMovies = async () => {
 	const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US'
 	const options = {
 		headers: {
@@ -14,7 +14,7 @@ export const fetchMovies = async () => {
 	}
 
 	const res = await axios.get(url, options)
-	return console.log(res.data)
+	return res.data
 }
 
 // --------------------------
@@ -32,7 +32,7 @@ export const fetchSearchMovies = async (query = '', page = 1) => {
 	}
 
 	const res = await axios.get(url, options)
-	return console.log(res.data)
+	return res.data
 }
 
 // --------------------------
@@ -46,7 +46,7 @@ export const fetchMovieDetails = async (movie_id) => {
 	}
 
 	const res = await axios.get(url, options)
-	return console.log(res.data)
+	return res.data
 }
 
 // --------------------------
@@ -60,7 +60,7 @@ export const fetchMovieCredits = async (movie_id) => {
 	}
 
 	const res = await axios.get(url, options)
-	return console.log(res.data)
+	return res.data
 }
 
 // --------------------------
@@ -77,5 +77,5 @@ export const fetchMovieReviews = async (movie_id, page = 1) => {
 	}
 
 	const res = await axios.get(url, options)
-	return console.log(res)
+	return res.data
 }

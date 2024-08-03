@@ -1,9 +1,6 @@
-.header {
+.nav {
   background-color: #FF8945;
   border-radius: 10px;
-}
-
-.nav {
   display: flex;
 }
 

@@ -1,0 +1,40 @@
+.list {
+  display: flex;
+  gap: 20px;
+  row-gap: 70px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 165px;
+  max-height: 235px;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+.link {
+
+
+  &:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.626);
+    }
+}
+
+.img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.text {
+  margin-top: 5px;
+}
