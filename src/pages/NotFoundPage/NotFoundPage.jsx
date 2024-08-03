@@ -4,7 +4,7 @@ import s from './NotFoundPage.module.css'
 const NotFoundPage = () => {
   return (
     <div className={s.container}>
-      <img src="/public/pageNotFound.png" width="368" />
+      <img src="../../../public/pageNotFound.png" width="368" />
       <div className={s.text}>
         <h1>Opps...Page is not found</h1>
         <p>You can back to site:</p>
