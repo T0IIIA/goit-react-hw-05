@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  border: 1px solid #ff8945;
+  box-shadow: 0 0 10px #ff894589;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.image {
+  box-shadow: 0 0 10px #000000ab;
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 8px;
+}
+
+.info {
+  margin-bottom: 25px;
+}

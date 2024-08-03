@@ -31,3 +31,7 @@ a {
 img[alt] {
   letter-spacing: 0.13em;
 }
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}

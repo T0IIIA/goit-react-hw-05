@@ -1,13 +1,13 @@
-import s from './MovieDetailsPage.module.css'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchMovieDetails } from '../../servises/api'
 import Loader from '../../components/Loader/Loader'
+import MovieDetailsMarkup from '../../components/MovieDetailsMarkup/MovieDetailsMarkup'
 
 const MovieDetailsPage = () => {
   const params = useParams()
-
   const [movie, setMovie] = useState(null)
+
 
   useEffect(() => {
     try {
@@ -21,14 +21,15 @@ const MovieDetailsPage = () => {
     }
   }, [params.movieId])
 
+  console.log(movie)
 
   if (!movie) {
     return <Loader />
   }
   return (
-    <div>
-      <p>MovieDetailsPage #{params.movieId}</p>
-    </div>
+    <>
+      <MovieDetailsMarkup movie={movie} />
+    </>
   )
 }
 
