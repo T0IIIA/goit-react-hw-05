@@ -1,35 +1,48 @@
 import { useEffect, useState } from 'react'
 import { fetchSearchMovies } from '../../servises/api'
+import { useLocation, useSearchParams } from 'react-router-dom'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import MovieList from '../../components/MovieList/MovieList'
-import s from './MoviesPage.module.css'
-
 
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([])
-  const [searchValue, setSearchValue] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const filterValue = searchParams.get('query') ?? ''
 
+
+  // ----------------------------
   useEffect(() => {
     try {
       const getData = async () => {
-        const data = await fetchSearchMovies(searchValue)
+        const data = await fetchSearchMovies(filterValue)
         setMovies(data.results)
       }
       getData()
     } catch (error) {
       console.log(error)
     }
-  }, [searchValue])
+  }, [filterValue])
 
-  const handleSearchValue = (value) => {
-    setSearchValue(value)
+
+  // ----------------------------
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const newValue = e.target.elements.search.value.trim()
+
+    if (!newValue) {
+      return setSearchParams({})
+    }
+
+    setSearchParams({ query: newValue })
+    searchParams.set('query', newValue)
   }
 
 
+  // ----------------------------
   return (
     <>
-      <SearchBar handleSearchValue={handleSearchValue} searchValue={searchValue} />
+      <SearchBar onSubmit={onSubmit} filterValue={filterValue} />
 
       <MovieList movies={movies} />
     </>

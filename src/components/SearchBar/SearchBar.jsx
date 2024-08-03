@@ -1,16 +1,19 @@
 import s from './SearchBr.module.css'
 
-const SearchBar = ({ handleSearchValue, searchValue }) => {
+const SearchBar = ({ onSubmit, filterValue }) => {
   return (
-    <>
+    <form className={s.container} onSubmit={onSubmit}>
       <input
-        onChange={(e) => handleSearchValue(e.target.value)}
-        value={searchValue}
+        defaultValue={filterValue}
         className={s.input}
         placeholder='Search'
+        name='search'
         type='search'
       />
-    </>
+      <button className={s.button} type='submit'>
+        Search
+      </button>
+    </form>
   )
 }
 

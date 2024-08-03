@@ -1,20 +1,29 @@
+// import { Link } from 'react-router-dom'
+import Loader from '../Loader/Loader'
 import s from './MovieDetailsMarkup.module.css'
 
-const MovieDetailsMarkup = (movie) => {
-  const mov = movie.movie
-  const movieName = mov.title
-  const overview = mov.overview
-  const release = mov.release_date ? ` (${mov.release_date.slice(0, 4)})` : ''
-  const userScore = mov.vote_average ? `User Score: ${(mov.vote_average * 10).toFixed(0)}%` : ''
-  const imageUrl = mov.poster_path
-    ? `https://image.tmdb.org/t/p/w500${mov.poster_path}`
-    : '../../../img/alternative.png'
-  const genres = mov.genres.map((genre) => genre.name).join(', ')
 
-
+const MovieDetailsMarkup = ({ movie }) => {
+  // const backLink = location.state?.from ?? '/'
+  const defaultImg =
+    '<https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg>'
   
+  const movieName = movie.title
+  const overview = movie.overview
+  const release = movie.release_date ? ` (${movie.release_date.slice(0, 4)})` : ''
+  const userScore = movie.vote_average ? `User Score: ${(movie.vote_average * 10).toFixed(0)}%` : ''
+   const imageUrl = movie.poster_path
+     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+     : defaultImg
+  const genres = movie.genres.map((genre) => genre.name).join(', ')
+
+
+  if(!movie){
+    return Loader
+  }
   return (
     <div className={s.container}>
+      {/* <Link to={backLink.current} className={s.goBack}>Go back!</Link> */}
       <img className={s.image} src={imageUrl} alt={`cover image of the movie "${movieName}" `} />
 
       <div className={s.about}>

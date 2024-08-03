@@ -8,6 +8,10 @@
   padding: 10px 15px;
   color: #000000;
   overflow: hidden;
+
+    &:hover {
+      color: rgb(2, 55, 66)
+    }
 }
 
 .active {

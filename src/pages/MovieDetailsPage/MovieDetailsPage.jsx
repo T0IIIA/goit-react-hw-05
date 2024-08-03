@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchMovieDetails } from '../../servises/api'
 import Loader from '../../components/Loader/Loader'
@@ -6,6 +6,7 @@ import MovieDetailsMarkup from '../../components/MovieDetailsMarkup/MovieDetails
 
 const MovieDetailsPage = () => {
   const params = useParams()
+  const location = useLocation()
   const [movie, setMovie] = useState(null)
 
 
@@ -28,7 +29,7 @@ const MovieDetailsPage = () => {
   }
   return (
     <>
-      <MovieDetailsMarkup movie={movie} />
+      <MovieDetailsMarkup movie={movie} location={location} />
     </>
   )
 }
