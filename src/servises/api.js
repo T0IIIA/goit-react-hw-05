@@ -19,7 +19,7 @@ export const fetchTrendingMovies = async () => {
 
 // --------------------------
 
-export const fetchSearchMovies = async (query = '', page = 1) => {
+export const fetchSearchMovies = async (query = 'batman', page = 1) => {
 	const url = 'https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US'
 	const options = {
 		headers: {

@@ -27,3 +27,7 @@ a {
   color: white;
   text-decoration: none;
 }
+
+img[alt] {
+  letter-spacing: 0.13em;
+}

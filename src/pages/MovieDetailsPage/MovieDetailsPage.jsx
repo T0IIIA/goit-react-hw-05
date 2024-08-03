@@ -1,8 +1,34 @@
 import s from './MovieDetailsPage.module.css'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { fetchMovieDetails } from '../../servises/api'
+import Loader from '../../components/Loader/Loader'
 
 const MovieDetailsPage = () => {
+  const params = useParams()
+
+  const [movie, setMovie] = useState(null)
+
+  useEffect(() => {
+    try {
+      const getData = async () => {
+        const data = await fetchMovieDetails(params.movieId)
+        setMovie(data)
+      }
+      getData()
+    } catch (error) {
+      console.log(error)
+    }
+  }, [params.movieId])
+
+
+  if (!movie) {
+    return <Loader />
+  }
   return (
-    <div>MovieDetailsPage</div>
+    <div>
+      <p>MovieDetailsPage #{params.movieId}</p>
+    </div>
   )
 }
 
