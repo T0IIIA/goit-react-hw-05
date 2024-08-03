@@ -21,7 +21,7 @@ const MovieDetailsPage = () => {
     }
   }, [params.movieId])
 
-  console.log(movie)
+
 
   if (!movie) {
     return <Loader />
