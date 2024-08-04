@@ -1,6 +1,6 @@
 import s from './MovieDetailsPage.module.css'
 import { Link, useLocation, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { fetchMovieDetails } from '../../servises/api'
 import Loader from '../../components/Loader/Loader'
 import MovieDetailsMarkup from '../../components/MovieDetailsMarkup/MovieDetailsMarkup'
@@ -10,7 +10,8 @@ const MovieDetailsPage = () => {
   const params = useParams()
   const location = useLocation()
   const [movie, setMovie] = useState(null)
-  const backLink = location.state?.from ?? '/'
+  const backLink = useRef(location?.state ?? '/')
+  
 
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const MovieDetailsPage = () => {
   }
   return (
     <div className={s.container}>
-      <Link to={backLink} className={s.backLink}>🔙</Link>
+      <Link to={backLink.current} className={s.backLink}>🔙</Link>
       <MovieDetailsMarkup movie={movie} />
     </div>
   )

@@ -15,7 +15,8 @@
 }
 
 .link {
-  height: 229.5px;
+  min-height: 229.5px;
+  height: 100%;
   width: 153px;
   transition: all 0.2s ease;
   border-radius: 5px;
@@ -42,9 +43,24 @@
     }
 }
 
-
-
-
 .text {
   margin-top: 10px;
+}
+
+
+
+
+@media (max-width: 407px) {
+  .item {
+  max-width: 250px;
+  width: 100%;
+  min-height: 420px;
+  height: 100%;
+}
+
+.link {
+  max-width: 240px;
+  width: 100%;
+  
+}
 }
