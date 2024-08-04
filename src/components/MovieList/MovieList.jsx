@@ -15,7 +15,7 @@ const MovieList = ({ movies = [] }) => {
                 src={
                   movie.poster_path
                     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                    : '/public/alternative.png'
+                    : '/alternative.png'
                 }
                 alt={`cover image of the movie "${movie.title}" `}
               />
