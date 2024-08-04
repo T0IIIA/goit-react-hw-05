@@ -9,7 +9,7 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
   const filterValue = searchParams.get('query') ?? ''
-
+  
 
   // ----------------------------
   useEffect(() => {

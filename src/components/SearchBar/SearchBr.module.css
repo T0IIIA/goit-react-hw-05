@@ -16,8 +16,9 @@
   border-radius: 4px;
   padding: 4px 8px;
   background-color: #FF8945;
+  transition: all 0.2s ease;
 
     &:hover {
-      color: rgb(2, 55, 66);
+      background-color: #fea16a;
     }
 }

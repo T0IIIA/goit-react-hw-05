@@ -5,6 +5,7 @@
   border-radius: 5px;
   overflow: hidden;
   padding: 20px;
+  overflow: hidden;
 }
 
 .image {
@@ -24,12 +25,27 @@
   padding-left: 15px;
   padding-right: 15px;
   gap: 8px;
+  min-width: 300px;
 }
 
 .info {
   margin-bottom: 25px;
 }
 
-.goBack {
-  
+@media (max-width: 650px) {
+  .container {
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .image, .about {
+    width: 100%;
+    max-width: none;
+  }
+
+  .about {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

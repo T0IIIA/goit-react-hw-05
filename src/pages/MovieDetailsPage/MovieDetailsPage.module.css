@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+
+.backLink {
+  width: 62px;
+  font-size: 22px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 0 10px #0000006a;
+
+  &:hover {
+    background-color: #FF8945;
+  }
+}
+
+
+
+@media (max-width: 650px) {
+  .container {
+ gap: 10px;
+}
+
+
+.backLink {
+  background-color: #ffffff7a;
+  position: sticky;
+  top: 10px;
+
+  &:hover {
+    background-color: #ff894598;
+  }
+}
+
+}

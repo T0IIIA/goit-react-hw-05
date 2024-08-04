@@ -1,13 +1,16 @@
-import { useLocation, useParams } from 'react-router-dom'
+import s from './MovieDetailsPage.module.css'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchMovieDetails } from '../../servises/api'
 import Loader from '../../components/Loader/Loader'
 import MovieDetailsMarkup from '../../components/MovieDetailsMarkup/MovieDetailsMarkup'
 
+
 const MovieDetailsPage = () => {
   const params = useParams()
   const location = useLocation()
   const [movie, setMovie] = useState(null)
+  const backLink = location.state?.from ?? '/'
 
 
   useEffect(() => {
@@ -23,15 +26,16 @@ const MovieDetailsPage = () => {
   }, [params.movieId])
 
 
-
   if (!movie) {
     return <Loader />
   }
   return (
-    <>
-      <MovieDetailsMarkup movie={movie} location={location} />
-    </>
+    <div className={s.container}>
+      <Link to={backLink} className={s.backLink}>🔙</Link>
+      <MovieDetailsMarkup movie={movie} />
+    </div>
   )
 }
+
 
 export default MovieDetailsPage
