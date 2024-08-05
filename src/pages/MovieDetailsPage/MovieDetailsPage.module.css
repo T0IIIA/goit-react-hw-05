@@ -8,18 +8,40 @@
 .backLink {
   width: 62px;
   font-size: 22px;
-  background-color: #fff;
+  background-color: #ffffffb9;
   border-radius: 10px;
   padding: 2px;
-  padding-left: 20px;
-  padding-right: 20px;
   box-shadow: 0 0 10px #0000006a;
+  position: sticky;
+  top: 10px;
 
   &:hover {
     background-color: #FF8945;
   }
 }
 
+.info_list {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  padding: 4px;
+}
+
+.info_link {
+  transition: all ease 0.2ms;
+  padding: 4px 8px;
+
+  &:hover {
+    color: #FF8945;
+  }
+}
+
+.active {
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ff894589;
+  background-color: #07070714;
+  color: #FF8945
+}
 
 
 @media (max-width: 650px) {
@@ -29,11 +51,12 @@
 
 
 .backLink {
-  background-color: #ffffff7a;
-  position: sticky;
-  top: 10px;
+  width: 38px;
+  font-size: 18px;
+  
 
   &:hover {
+    
     background-color: #ff894598;
   }
 }

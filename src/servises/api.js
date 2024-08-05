@@ -51,8 +51,8 @@ export const fetchMovieDetails = async (movie_id) => {
 
 // --------------------------
 
-export const fetchMovieCredits = async (movie_id) => {
-	const url = `https://api.themoviedb.org/3/movie/${movie_id}/credits?language=en-US`
+export const fetchMovieCredits = async (movieId) => {
+	const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`
 	const options = {
 		headers: {
 			Authorization: ApiToken,
@@ -60,13 +60,13 @@ export const fetchMovieCredits = async (movie_id) => {
 	}
 
 	const res = await axios.get(url, options)
-	return res.data
+	return res.data.cast
 }
 
 // --------------------------
 
-export const fetchMovieReviews = async (movie_id, page = 1) => {
-	const url = `https://api.themoviedb.org/3/movie/${movie_id}/reviews?language=en-US`
+export const fetchMovieReviews = async (movieId, page = 1) => {
+	const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US`
 	const options = {
 		headers: {
 			Authorization: ApiToken,
@@ -77,5 +77,5 @@ export const fetchMovieReviews = async (movie_id, page = 1) => {
 	}
 
 	const res = await axios.get(url, options)
-	return res.data
+	return res.data.results
 }

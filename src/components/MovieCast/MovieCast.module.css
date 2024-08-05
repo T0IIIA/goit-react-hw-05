@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  width: 100%;
+  margin-top: 15px;
+  height: 320px;
+  box-shadow: 0 0 10px #000000ab;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.about { 
+  padding: 0 2px;
+
+  .name {
+  margin-top: 6px;
+  }
+
+  .character {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #ff8945
+  }
+}
+

@@ -1,4 +1,3 @@
-import Loader from '../Loader/Loader'
 import s from './MovieDetailsMarkup.module.css'
 
 
@@ -16,9 +15,7 @@ const MovieDetailsMarkup = ({ movie }) => {
   const genres = movie.genres.map((genre) => genre.name).join(', ')
 
 
-  if(!movie){
-    return Loader
-  }
+
   return (
     <div className={s.container}>
       <img className={s.image} src={imageUrl} alt={`cover image of the movie "${movieName}" `} />
