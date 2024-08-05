@@ -29,7 +29,7 @@
 }
 
 .info_link {
-  transition: all ease 0.2ms;
+  transition: all ease 0.2s;
   padding: 4px 8px;
 
   &:hover {
