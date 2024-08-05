@@ -1,6 +1,6 @@
 import s from './MovieDetailsPage.module.css'
 import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router-dom'
-import { useEffect, useRef, useState } from 'react'
+import { Suspense, useEffect, useRef, useState } from 'react'
 import { fetchMovieDetails } from '../../servises/api'
 import Loader from '../../components/Loader/Loader'
 import MovieDetailsMarkup from '../../components/MovieDetailsMarkup/MovieDetailsMarkup'
@@ -51,7 +51,9 @@ const MovieDetailsPage = () => {
           </NavLink>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   )
 }

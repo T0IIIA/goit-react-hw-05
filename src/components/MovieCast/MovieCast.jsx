@@ -2,7 +2,7 @@ import s from './MovieCast.module.css'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchMovieCredits } from '../../servises/api'
-import Loader from '../Loader/Loader'
+
 
 const MovieCast = () => {
   const defaultImg =
@@ -26,9 +26,6 @@ const MovieCast = () => {
   }, [movieId])
 
 
-  if (!movieCast) {
-    return <Loader />
-  }
   return (
     <ul className={s.list}>
       {movieCast.map((person) => (
