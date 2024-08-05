@@ -14,15 +14,15 @@ const MoviesPage = () => {
   // ----------------------------
   useEffect(() => {
     const getData = async () => {
-      try {
-      
-        const data = await fetchSearchMovies(filterValue)
-        setMovies(data.results)
-      
-      
-      } catch (error) {
-        console.log(error)
+      if (!filterValue) {
+        return
       }
+        try {
+          const data = await fetchSearchMovies(filterValue)
+          setMovies(data.results)
+        } catch (error) {
+          console.log(error)
+        }
     }
     getData()
   }, [filterValue])
