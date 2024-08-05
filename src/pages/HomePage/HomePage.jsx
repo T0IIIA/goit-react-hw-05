@@ -7,15 +7,15 @@ const HomePage = () => {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    try {
-      const getData = async () => {
+    const getData = async () => {
+      try {
         const data = await fetchTrendingMovies()
         setMovies(data.results)
+      } catch (err) {
+        console.log(err)
       }
-      getData()
-    } catch (err) {
-      console.log(err)
     }
+    getData()
   }, [])
 
   return (

@@ -16,17 +16,16 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null)
   const backLink = useRef(location?.state ?? '/')
 
-
   useEffect(() => {
-    try {
-      const getData = async () => {
+    const getData = async () => {
+      try {
         const data = await fetchMovieDetails(params.movieId)
         setMovie(data)
+      } catch (error) {
+        console.log(error)
       }
-      getData()
-    } catch (error) {
-      console.log(error)
     }
+    getData()
   }, [params.movieId])
 
   if (!movie) {

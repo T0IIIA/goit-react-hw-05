@@ -7,22 +7,19 @@ const MovieReviews = () => {
   const { movieId } = useParams()
   const [reviews, setReviews] = useState([])
 
-
   useEffect(() => {
     if (!movieId) return
 
-
-    try {
-      const getData = async () => {
+    const getData = async () => {
+      try {
         const data = await fetchMovieReviews(movieId)
         setReviews(data)
+      } catch (error) {
+        console.log(error)
       }
-      getData()
-    } catch (error) {
-      console.log(error)
     }
+    getData()
   }, [movieId])
-
 
   return (
     <ul className={s.list}>

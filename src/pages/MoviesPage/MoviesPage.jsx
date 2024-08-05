@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fetchSearchMovies } from '../../servises/api'
-import { useLocation, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import MovieList from '../../components/MovieList/MovieList'
 
@@ -13,15 +13,18 @@ const MoviesPage = () => {
 
   // ----------------------------
   useEffect(() => {
-    try {
-      const getData = async () => {
+    const getData = async () => {
+      try {
+      
         const data = await fetchSearchMovies(filterValue)
         setMovies(data.results)
+      
+      
+      } catch (error) {
+        console.log(error)
       }
-      getData()
-    } catch (error) {
-      console.log(error)
     }
+    getData()
   }, [filterValue])
 
 
